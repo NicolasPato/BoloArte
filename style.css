@@ -1,0 +1,160 @@
+@import url('https://fonts.cdnfonts.com/css/climate-crisis');
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    margin: 0;
+    background: rgb(255,203,219);
+    background: linear-gradient(90deg, rgba(255,203,219,1) 15%, rgba(255,183,205,1) 50%, rgba(255,203,219,1) 75%);
+    
+}
+
+.layout {
+    display: grid;
+    grid-template-rows: 60px 60px auto 60px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'slidebar' 'main' 'footer';
+    min-height: 100vh;
+}
+
+@media (min-width: 480px) {
+    .layout {
+        display: grid;
+        grid-template-rows: 60px auto 60px;
+        grid-template-columns: 10vw auto;
+        grid-template-areas: 
+        'header header header'
+        'slidebar main main'
+        'footer footer footer';
+    }
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: slidebar;
+    margin: 10px;
+    text-align: justify;
+}
+
+h1 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 1.7em;
+    color: #051119;
+    text-align: center;
+}
+
+main {
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: 10px;
+    grid-area: main;
+    background-color: white;
+    color: #051119;
+    width: 80vw;
+    overflow: auto;
+    border-radius: 28px;
+    padding: 30px;
+}
+
+footer {
+    grid-area: footer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #051119;
+    padding-left: 10px;
+}
+
+/* Estilizando os inputs */
+input[type="text"],
+input[type="radio"],
+input[type="checkbox"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 70%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%; 
+    border: 2px solid #ccc; 
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle; 
+}
+
+input[type="radio"]::before {
+    content: '';
+    width: 10px; 
+    height: 10px;
+    background-color: transparent; 
+    border-radius: 50%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); 
+    transition: transform 0.2s ease; 
+}
+
+
+input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1); 
+    background-color: #6cb2eb; 
+}
+
+input[type="checkbox"]::before {
+    content: '\2713'; 
+    color: transparent; 
+    font-size: 14px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); 
+    transition: transform 0.2s ease; 
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+    color: #6cb2eb; 
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #6cb2eb;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #4a8bc2; 
+}
